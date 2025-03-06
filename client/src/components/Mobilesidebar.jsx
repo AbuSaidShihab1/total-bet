@@ -153,7 +153,7 @@ const Mobilesidebar = () => {
   //   };
   //   try {
   //     const response = await axios.post(
-  //       `http://localhost:6001/api/payment/payment`,
+  //       `https://api.eassypay.com/api/payment/payment`,
   //       postData
   //     );
   //     if (response.data.success) {

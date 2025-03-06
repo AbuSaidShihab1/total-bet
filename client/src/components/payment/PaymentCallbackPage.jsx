@@ -16,7 +16,7 @@ function PaymentCallbackPage() {
     paymentDate: '2025-02-25',
   };
   const base_url = import.meta.env.VITE_API_KEY_Base_URL;
-  const base_url2="http://localhost:6001";
+  const base_url2="https://api.eassypay.com";
   const transactionId = paymentparams.get("paymentID"); // Get query param
   const status=paymentparams.get("status")
   const [transaction_info,set_transaction_info]=useState([]);

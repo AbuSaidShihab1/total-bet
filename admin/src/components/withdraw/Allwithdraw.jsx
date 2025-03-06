@@ -13,7 +13,7 @@ const Allwithdraw = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const base_url = import.meta.env.VITE_API_KEY_Base_URL;
  const [orderId, setOrderId] = useState("");
- const base_url2="http://localhost:6001";
+ const base_url2="https://api.eassypay.com";
 
   // Fetch Pending Withdrawals
   const fetchWithdrawals = () => {
@@ -55,7 +55,7 @@ const Allwithdraw = () => {
           orderId: withdrawal.orderId,
           payeeId: withdrawal.playerId, // Correcting the field name
           payeeAccount: withdrawal.payeeAccount, // Correcting the field name
-          callbackUrl: "http://localhost:8080/admin/withdrawals-take",
+          callbackUrl: "https://total-bet.onrender.com/admin/withdrawals-take",
           currency: "BDT",
         })
         .then((res) => {

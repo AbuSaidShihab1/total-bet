@@ -38,7 +38,7 @@ const Createuser = () => {
     setIsLoading(true); // Set loading to true before submitting
 
     try {
-      const response = await axios.post(`http://localhost:8080/auth/signup`, formData);
+      const response = await axios.post(`https://total-bet.onrender.com/auth/signup`, formData);
       setMessage(response.data.message);
       toast(response.data.message);
     } catch (error) {

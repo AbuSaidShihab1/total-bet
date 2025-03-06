@@ -139,7 +139,7 @@ const Header = () => {
   const [paymnet_id,set_paymentid]=useState("");
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const { width, height } = useWindowSize(); // Get window size for confetti
-  const base_url2="http://localhost:6001";
+  const base_url2="https://api.eassypay.com";
   const merchant_name="hobet"
 
   useEffect(() => {
@@ -211,7 +211,7 @@ const Header = () => {
   //   };
   //   try {
   //     const response = await axios.post(
-  //       `http://localhost:6001/api/payment/payment`,
+  //       `https://api.eassypay.com/api/payment/payment`,
   //       postData
   //     );
   //     if (response.data.success) {
@@ -486,7 +486,7 @@ const Header = () => {
     // Fetch notifications using Axios
     const all_notifications=()=>{
       axios
-      .get(`http://localhost:8080/admin/notifications/${user_info?.email}`)
+      .get(`https://total-bet.onrender.com/admin/notifications/${user_info?.email}`)
       .then((response) => {
         if (response.data.success) {
           setNotifications(response.data.data);
@@ -503,7 +503,7 @@ const Header = () => {
    // Delete notification
    const deleteNotification = (id) => {
     axios
-      .delete(`http://localhost:8080/admin/notifications/${id}`)
+      .delete(`https://total-bet.onrender.com/admin/notifications/${id}`)
       .then((res) => {
          if(res.data.success){
                all_notifications();
