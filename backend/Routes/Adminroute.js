@@ -653,7 +653,7 @@ admin_route.get('/login-history', async (req, res) => {
 // -------------moderator---------------------------
 admin_route.get("/all-admins",async(req,res)=>{
   try {
-     const all_admins=await admin_model.find({role:"admin",is_admin:true});
+     const all_admins=await admin_model.find({role:"admin"});
      if(!all_admins){
          return res.send({success:false,message:"Active admin Not found!"})   
      }
@@ -664,7 +664,7 @@ admin_route.get("/all-admins",async(req,res)=>{
 });
 admin_route.get("/all-super-admins",async(req,res)=>{
   try {
-     const all_admins=await admin_model.find({role:"super-admin",is_admin:true});
+     const all_admins=await admin_model.find({role:"super-admin",status:"active"});
      if(!all_admins){
          return res.send({success:false,message:"Active admin Not found!"})   
      }
@@ -675,7 +675,7 @@ admin_route.get("/all-super-admins",async(req,res)=>{
 });
 admin_route.get("/pending-admins",async(req,res)=>{
   try {
-     const pending_admins=await admin_model.find({is_admin:false});
+     const pending_admins=await admin_model.find({status:"inactive"});
      if(!pending_admins){
          return res.send({success:false,message:"Active admin Not found!"})   
      }

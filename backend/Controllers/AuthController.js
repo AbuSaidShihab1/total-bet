@@ -64,7 +64,7 @@ const adminlogin = async (req, res) => {
     try {
         const { email, password } = req.body;
         console.log(req.body)
-        const user = await admin_model.findOne({ email,is_admin:true });
+        const user = await admin_model.findOne({ email,status:"active"});
         const errorMsg = 'Auth failed email or password is wrong';
         if (!user) {
             return res.json({ message: errorMsg, success: false });

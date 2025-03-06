@@ -15,14 +15,10 @@ const adminSchema = new Schema({
         type: String,
         required: true,
     },
-    is_admin: {
-        type: Boolean,
-        default: false
-    },
     status: {
         type: String,
         enum: ['active', 'inacive'],
-        default: 'deactivated',
+        default: 'inacive',
     },
     created_by:{
         type:String,
