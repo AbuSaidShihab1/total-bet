@@ -57,7 +57,7 @@ export default function Footer() {
     {
       title: "Promotions",
       slug: "promotions",
-      content: ["Elon Battles", "Bonus Offers", "Special Events"],
+      content: ["HoBet", "Bonus Offers", "Special Events"],
     },
   ];
 
@@ -79,10 +79,7 @@ export default function Footer() {
       </div>
       <footer className="mt-10 text-gray-400 text-sm text-center">
         <p>
-          18+. Copyright &copy; 2023 Elon is owned by Sknet Tech Ltd., a limited
-          liability company registered in Belize with company registration
-          number 000042585, licensed in the State of Anjouan under the Computer
-          Gaming Licensing Act 007 of 2005.
+          18+. Copyright &copy; 2025 HoBet is owned
         </p>
         <p className="mt-2">
           By accessing this site, you accept that we use cookies to improve your
