@@ -307,7 +307,7 @@ const Header = () => {
       if(selectedMethod.name==="Bkash"){
     // If all validations pass
     try {
-      const {data} = await axios.post(`${base_url2}/api/payment/bkash`,{mid:"merchant1",payerId:user_details.player_id,amount:transactionAmount,currency:"BDT",redirectUrl:"https://www.babu88.com",orderId:orderId,callbackUrl:"http://localhost:5173/callback-payment"});
+      const {data} = await axios.post(`${base_url2}/api/payment/bkash`,{mid:"merchant1",payerId:user_details.player_id,amount:transactionAmount,currency:"BDT",redirectUrl:"https://hoooooobet.onrender.com/",orderId:orderId,callbackUrl:"https://hoooooobet.onrender.com/callback-payment"});
       setProgress(70); // Update progress on successful request
       console.log(data)
       if (data.success) {
