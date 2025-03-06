@@ -204,7 +204,7 @@ const handleSignUp = (e) => {
         <button className="absolute top-4 right-4 text-gray-600 hover:text-gray-900" onClick={onClose}>
           <IoClose size={24} />
         </button>
-
+            {/* ----------signup and login form */}
         <h2 className="text-2xl font-semibold text-center text-gray-800">Hey, Welcome Back</h2>
         <p className="text-gray-500 text-center mb-4">Enter your credentials to access your account</p>
         <Toaster
