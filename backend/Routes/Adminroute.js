@@ -465,55 +465,55 @@ admin_route.get("/all-transactions", async (req, res) => {
   }
 });
 // PUT route to update the status of a transaction
-admin_route.put('/update-deposit-status/:id', async (req, res) => {
-  const { status, reason, updated_by } = req.body;
-  const { id } = req.params; // Transaction ID from the URL parameter
+// admin_route.put('/update-deposit-status/:id', async (req, res) => {
+//   const { status, reason, updated_by } = req.body;
+//   const { id } = req.params; // Transaction ID from the URL parameter
 
-  // Custom Validation
-  if (!status || !['pending', 'success', 'failed'].includes(status)) {
-    return res.status(400).json({ message: 'Invalid status. Must be "pending", "success", or "failed".' });
-  }
+//   // Custom Validation
+//   if (!status || !['pending', 'success', 'failed'].includes(status)) {
+//     return res.status(400).json({ message: 'Invalid status. Must be "pending", "success", or "failed".' });
+//   }
 
-  if (!reason || reason.trim() === '') {
-    return res.status(400).json({ message: 'Reason is required and cannot be empty.' });
-  }
+//   if (!reason || reason.trim() === '') {
+//     return res.status(400).json({ message: 'Reason is required and cannot be empty.' });
+//   }
 
-  if (!updated_by || updated_by.trim() === '') {
-    return res.status(400).json({ message: 'Updated by field is required and cannot be empty.' });
-  }
+//   if (!updated_by || updated_by.trim() === '') {
+//     return res.status(400).json({ message: 'Updated by field is required and cannot be empty.' });
+//   }
 
-  try {
-    // Find the transaction by ID
-    const transaction = await transaction_model.findById(id);
+//   try {
+//     // Find the transaction by ID
+//     const transaction = await transaction_model.findById(id);
     
-    if (!transaction) {
-      return res.status(404).json({ message: 'Transaction not found' });
-    }
+//     if (!transaction) {
+//       return res.status(404).json({ message: 'Transaction not found' });
+//     }
 
-    // Update the status and reason
-    transaction.status = status;
-    transaction.reason = reason;
-    transaction.updated_by = updated_by;
-    const find_user=await UserModel.findOne({email:transaction.customer_email});
-    if(status=="success"){
-      find_user.balance+=transaction.amount;
-      find_user.save();
-    }
+//     // Update the status and reason
+//     transaction.status = status;
+//     transaction.reason = reason;
+//     transaction.updated_by = updated_by;
+//     const find_user=await UserModel.findOne({email:transaction.customer_email});
+//     if(status=="success"){
+//       find_user.balance+=transaction.amount;
+//       find_user.save();
+//     }
 
-    // Save the updated transaction
-    await transaction.save();
+//     // Save the updated transaction
+//     await transaction.save();
 
-    // Send success response
-    return res.status(200).json({
-      success: true,
-      message: 'Transaction status updated successfully',
-      data: transaction,
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: 'Server error' });
-  }
-});
+//     // Send success response
+//     return res.status(200).json({
+//       success: true,
+//       message: 'Transaction status updated successfully',
+//       data: transaction,
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ message: 'Server error' });
+//   }
+// });
 
 // Get Withdraw History
 admin_route.get("/single-user-withdraws/:userId", async (req, res) => {

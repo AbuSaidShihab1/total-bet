@@ -37,26 +37,26 @@ const Alldeposit = () => {
   );
 
   // Handle status change
-  const handleStatusChange = async () => {
-    if (!newStatus || !reason) {
-      toast.error("Both status and reason are required!");
-      return;
-    }
+  // const handleStatusChange = async () => {
+  //   if (!newStatus || !reason) {
+  //     toast.error("Both status and reason are required!");
+  //     return;
+  //   }
 
-    try {
-      const response = await axios.put(
-        `${base_url}/admin/update-deposit-status/${selectedTransaction._id}`,
-        { status: newStatus, reason,updated_by:admin_info.name}
-      );
-      toast.success("Status updated successfully!");
-      setStatusPopupOpen(false);
-      setNewStatus("");
-      setReason("");
-      pending_deposit_info(); // Refresh data
-    } catch (error) {
-      toast.error("Failed to update status. Please try again.");
-    }
-  };
+  //   try {
+  //     const response = await axios.put(
+  //       `${base_url}/admin/update-deposit-status/${selectedTransaction._id}`,
+  //       { status: newStatus, reason,updated_by:admin_info.name}
+  //     );
+  //     toast.success("Status updated successfully!");
+  //     setStatusPopupOpen(false);
+  //     setNewStatus("");
+  //     setReason("");
+  //     pending_deposit_info(); // Refresh data
+  //   } catch (error) {
+  //     toast.error("Failed to update status. Please try again.");
+  //   }
+  // };
 
   return (
     <div className="w-full font-bai overflow-y-auto">
@@ -93,7 +93,7 @@ const Alldeposit = () => {
                     <th className="p-3 text-left">Amount</th>
                     <th className="p-3 text-left">Status</th>
                     <th className="p-3 text-left">Action</th>
-                    <th className="p-3 text-left">Change Status</th> {/* New Column */}
+                    {/* <th className="p-3 text-left">Change Status</th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -148,7 +148,7 @@ const Alldeposit = () => {
                           </button>
                         </NavLink>
                       </td>
-                      <td className="p-3">
+                      {/* <td className="p-3">
                         <button
                           onClick={() => {
                             setSelectedTransaction(transaction);
@@ -158,7 +158,7 @@ const Alldeposit = () => {
                         >
                           Change Status
                         </button>
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>
