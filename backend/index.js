@@ -21,6 +21,7 @@ app.use(cors(
     {
         origin:[
             "https://hoooooobet.onrender.com",
+            "https://admin-35t7.onrender.com",
             "*",
           ], // Specify the allowed origin
         methods: ["GET", "POST", "PUT", "DELETE","PATCH","OPTIONS"], // Specify allowed methods
